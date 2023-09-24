@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/gerald/Documents/Projects/Streamlit/venv"
+VIRTUAL_ENV="/home/gerald/Documents/Projects/OxiCheck_HackMTY2023/Streamlit/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
