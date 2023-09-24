@@ -1,0 +1,8 @@
+{
+    "presets": ["@babel/preset-env"],
+    "targets": {
+      "node": "10.x, 12.x, 14.x, 16.x"
+    }
+}
+  
+  
