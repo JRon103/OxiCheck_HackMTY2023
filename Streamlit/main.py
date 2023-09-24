@@ -5,7 +5,7 @@ import requests
 st.title('Basic Data Visualization App')
 st.text('This is an example app for datavisualization')
 
-st.header("Line Chart")
+st.header("Bar Chart")
 
 # Column representation
  

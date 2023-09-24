@@ -7,10 +7,9 @@ USE oxi;
 
 -- Definición y creación de Tablas
 
-CREATE TABLE `data`(
-    INT NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
-    Alta INT NOT NULL,
-    Baja INT NOT NULL,
-    Promedio INT NULL 
+CREATE TABLE `data` (
+  `Dia` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `Alta` INT NOT NULL,
+  `Baja` INT NOT NULL,
+  `Promedio` INT NOT NULL
 );
-

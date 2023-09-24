@@ -5,8 +5,9 @@ const cors = require('cors');
 
 // initalize
 const app = express();
+require('./database');
 
-// Parseo del body d elas solicitudes como JSON
+// Parseo del body de las solicitudes como JSON
 app.use( bodyparser.json() );
 
 // middlewares
