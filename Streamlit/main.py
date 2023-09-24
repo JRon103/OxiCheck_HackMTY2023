@@ -18,6 +18,7 @@ st.header("Bar Chart")
 
 response = requests.get("http://localhost:3000/api");
 data = response.json();
+print(data)
 
 df = pd.DataFrame(data)
 df

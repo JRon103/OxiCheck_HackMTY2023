@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('./database');
+const axios = require('axios');
 
 router.post('/api', async (req, res, next) => {
         
@@ -21,7 +22,7 @@ router.post('/api', async (req, res, next) => {
     }
 });
 
-router.get('/api', async (req, res, next) => {
+/*router.get('/api', async (req, res, next) => {
 
     // const {Dia} = req.body;
 
@@ -59,6 +60,56 @@ router.get('/api', async (req, res, next) => {
         console.log(error);
         res.send('Error: ', error);
     }
+});*/
+
+/*router.get('/api', async (req, res, next) => {
+
+    try{
+
+        const json = await axios.get("http://35.238.147.212:3000/api");
+        console.log(json);
+
+        const datos = json;
+            for (const dato of datos) {
+                const dia = `Dia ${dato.Dia}`;
+                const valores = [dato.Alta, dato.Baja, dato.Promedio];
+
+                // Agregamos los valores del objeto actual al arreglo correspondiente del JSON
+                json[dia] = json[dia] || [];
+                json[dia].push(...valores);
+            }
+
+        console.log(datos);
+        res.send('Recibido');
+
+        // res.send('Recibido');
+            
+    }catch(error){
+        console.log(error);
+        res.send('Error: ', error);
+    }
+});*/
+
+router.get('/api', async (req, res, next) => {
+    try {
+        const response = await axios.get("http://35.238.147.212:3000/api");
+        const json = response.data;
+        console.log(json);
+
+        /*for (const dia in json) {
+            const valores = json[dia];
+            console.log(`${dia}:`, valores);
+        }*/
+
+
+        // res.send('Recibido');
+        res.send(json);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error: ' + error.message);
+    }
 });
+
+
 
 module.exports = router;
